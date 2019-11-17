@@ -48,14 +48,14 @@ public:
     {
     }
 
-    SquareMatrix<Type, M>& operator=(const Matrix<Type, M, M>& other)
+    const SquareMatrix<Type, M>& operator=(const Matrix<Type, M, M>& other)
     {
         Matrix<Type, M, M>::operator=(other);
         return *this;
     }
 
     template <size_t P, size_t Q>
-    SquareMatrix<Type, M> & operator=(const Slice<Type, M, M, P, Q>& in_slice)
+    const SquareMatrix<Type, M> & operator=(const Slice<Type, M, M, P, Q>& in_slice)
     {
         Matrix<Type, M, M>::operator=(in_slice);
         return *this;

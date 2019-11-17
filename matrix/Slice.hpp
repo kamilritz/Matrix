@@ -41,7 +41,7 @@ public:
     }
 
     template<size_t MM, size_t NN>
-    Slice<Type, P, Q, M, N>& operator=(const Slice<Type, P, Q, MM, NN>& other)
+    const Slice<Type, P, Q, M, N>& operator=(const Slice<Type, P, Q, MM, NN>& other)
     {
         Slice<Type, P, Q, M, N>& self = *this;
         for (size_t i = 0; i < P; i++) {
@@ -52,7 +52,7 @@ public:
         return self;
     }
 
-    Slice<Type, P, Q, M, N>& operator=(const Matrix<Type, P, Q>& other)
+    const Slice<Type, P, Q, M, N>& operator=(const Matrix<Type, P, Q>& other)
     {
         Slice<Type, P, Q, M, N>& self = *this;
         for (size_t i = 0; i < P; i++) {
@@ -65,7 +65,7 @@ public:
 
     // allow assigning vectors to a slice that are in the axis
     template <size_t DUMMY = 1> // make this a template function since it only exists for some instantiations
-    Slice<Type, 1, Q, M, N>& operator=(const Vector<Type, Q>& other)
+    const Slice<Type, 1, Q, M, N>& operator=(const Vector<Type, Q>& other)
     {
         Slice<Type, 1, Q, M, N>& self = *this;
         for (size_t j = 0; j < Q; j++) {

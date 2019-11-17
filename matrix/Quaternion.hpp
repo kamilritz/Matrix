@@ -268,10 +268,11 @@ public:
      *
      * @param other quaternion to multiply with
      */
-    void operator*=(const Quaternion &other)
+    const Quaternion& operator*=(const Quaternion &other)
     {
         Quaternion &self = *this;
         self = self * other;
+        return self;
     }
 
     /**
@@ -291,10 +292,11 @@ public:
      *
      * @param scalar scalar to multiply with
      */
-    void operator*=(Type scalar)
+    const Quaternion& operator*=(Type scalar)
     {
         Quaternion &q = *this;
         q = q * scalar;
+        return q;
     }
 
     /**

@@ -43,49 +43,49 @@ struct Dual
         value(v), derivative(d)
     {}
 
-    Dual<Scalar, N>& operator=(const Scalar& a)
+    const Dual<Scalar, N>& operator=(const Scalar& a)
     {
         derivative.setZero();
         value = a;
         return *this;
     }
 
-    Dual<Scalar, N>& operator +=(const Dual<Scalar, N>& a)
+    const Dual<Scalar, N>& operator +=(const Dual<Scalar, N>& a)
     {
         return (*this = *this + a);
     }
 
-    Dual<Scalar, N>& operator *=(const Dual<Scalar, N>& a)
+    const Dual<Scalar, N>& operator *=(const Dual<Scalar, N>& a)
     {
         return (*this = *this * a);
     }
 
-    Dual<Scalar, N>& operator -=(const Dual<Scalar, N>& a)
+    const Dual<Scalar, N>& operator -=(const Dual<Scalar, N>& a)
     {
         return (*this = *this - a);
     }
 
-    Dual<Scalar, N>& operator /=(const Dual<Scalar, N>& a)
+    const Dual<Scalar, N>& operator /=(const Dual<Scalar, N>& a)
     {
         return (*this = *this / a);
     }
 
-    Dual<Scalar, N>& operator +=(Scalar a)
+    const Dual<Scalar, N>& operator +=(Scalar a)
     {
         return (*this = *this + a);
     }
 
-    Dual<Scalar, N>& operator -=(Scalar a)
+    const Dual<Scalar, N>& operator -=(Scalar a)
     {
         return (*this = *this - a);
     }
 
-    Dual<Scalar, N>& operator *=(Scalar a)
+    const Dual<Scalar, N>& operator *=(Scalar a)
     {
         return (*this = *this * a);
     }
 
-    Dual<Scalar, N>& operator /=(Scalar a)
+    const Dual<Scalar, N>& operator /=(Scalar a)
     {
         return (*this = *this / a);
     }

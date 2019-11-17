@@ -225,23 +225,26 @@ public:
         return res;
     }
 
-    void operator+=(const Matrix<Type, M, N> &other)
+    const Matrix<Type, M, N>& operator+=(const Matrix<Type, M, N> &other)
     {
         Matrix<Type, M, N> &self = *this;
         self = self + other;
+        return self;
     }
 
-    void operator-=(const Matrix<Type, M, N> &other)
+    const Matrix<Type, M, N>& operator-=(const Matrix<Type, M, N> &other)
     {
         Matrix<Type, M, N> &self = *this;
         self = self - other;
+        return self;
     }
 
     template<size_t P>
-    void operator*=(const Matrix<Type, N, P> &other)
+    const Matrix<Type, M, N>& operator*=(const Matrix<Type, N, P> &other)
     {
         Matrix<Type, M, N> &self = *this;
         self = self * other;
+        return self;
     }
 
     /**
@@ -286,7 +289,7 @@ public:
         return (*this) + (-1*scalar);
     }
 
-    void operator*=(Type scalar)
+    const Matrix<Type, M, N>& operator*=(Type scalar)
     {
         Matrix<Type, M, N> &self = *this;
 
@@ -295,22 +298,26 @@ public:
                 self(i, j) = self(i, j) * scalar;
             }
         }
+        return self;
     }
 
-    void operator/=(Type scalar)
+    const Matrix<Type, M, N>& operator/=(Type scalar)
     {
         Matrix<Type, M, N> &self = *this;
         self = self * (Type(1) / scalar);
+        return self;
     }
 
-    inline void operator+=(Type scalar)
+    inline const Matrix<Type, M, N>& operator+=(Type scalar)
     {
         *this = (*this) + scalar;
+        return *this;
     }
 
-    inline void operator-=(Type scalar)
+    inline const Matrix<Type, M, N>& operator-=(Type scalar)
     {
         *this = (*this) - scalar;
+        return *this;
     }
 
     bool operator==(const Matrix<Type, M, N> &other) const
