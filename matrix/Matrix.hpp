@@ -11,10 +11,10 @@
 #include <cstdio>
 #include <cstring>
 
-#if defined(SUPPORT_STDIOSTREAM)
+// #if defined(SUPPORT_STDIOSTREAM)
 #include <iostream>
 #include <iomanip>
-#endif // defined(SUPPORT_STDIOSTREAM)
+// #endif // defined(SUPPORT_STDIOSTREAM)
 
 #include "math.hpp"
 
@@ -751,7 +751,7 @@ Matrix<Type, M, N> constrain(const Matrix<Type, M, N> &x,
     return m;
 }
 
-#if defined(SUPPORT_STDIOSTREAM)
+// #if defined(SUPPORT_STDIOSTREAM)
 template<typename Type, size_t  M, size_t N>
 std::ostream& operator<<(std::ostream& os,
                          const matrix::Matrix<Type, M, N>& matrix)
@@ -766,7 +766,7 @@ std::ostream& operator<<(std::ostream& os,
     }
     return os;
 }
-#endif // defined(SUPPORT_STDIOSTREAM)
+// #endif // defined(SUPPORT_STDIOSTREAM)
 
 } // namespace matrix
 
